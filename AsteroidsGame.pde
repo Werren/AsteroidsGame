@@ -1,9 +1,12 @@
 //your variable declarations here
 public void setup() 
 {
-  //your code here
+  Spaaceship aa = new Spaaceship();
 }
 public void draw() 
 {
-  //your code here
+  aa.show();
+}
+public void show()
+{
 }

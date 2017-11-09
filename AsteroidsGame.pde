@@ -1,33 +1,41 @@
 Spaceship boop=new Spaceship();
-Stars[] starrss = new Stars[100];
-boolean movee, turnup, turnip, stap;
+Stars[] starrss;
+boolean movee, turnup, turnip, stap, stop, as;
+float ss;
 public void setup() 
-{
+{   
  size(500, 500);
+ starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
 }
-public void draw()
+public void draw() 
 {
   background(0);
+  ss=0;
+      if (as){ss=-0.2;}
  for(int i=0;i<starrss.length;i++) { starrss[i].show(); }
   boop.show();
-  if(movee){ boop.move();boop.accelerate(0.05);}
+  if(movee){ boop.move();boop.accelerate(0.1+ss);}
   if(turnup){boop.turn(1);}
   if(turnip){boop.turn(-1);}
+  if(stop){ 
+    boop.setDirectionX(0);
+    boop.setDirectionY(0);}
   if(stap){
     fill(0);
     noStroke();
     rect(0,0,1000,1000);
     for(int i=0;i<200;i++)
+
   {
     fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
     ellipse(250,250,(float)(Math.random()*700),(float)(Math.random()*700));
   }
-    
   }
 }
 public void keyPressed()
 {
+       if (key=='q'){as=true;}
    if (key=='w') {  movee=true;}
    if (key=='d'){turnup=true;}
    if (key=='a'){turnip=true;}
@@ -40,6 +48,7 @@ public void keyPressed()
     }
 }
 public void keyReleased(){
+   if (key=='q'){as=false;}
    if (key=='d'){turnup=false;}
    if (key=='a'){turnip=false;}
    if (key=='s'){stap=false;}

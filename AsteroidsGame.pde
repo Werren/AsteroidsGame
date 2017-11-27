@@ -18,10 +18,10 @@ public void draw()
   ff=0.1;
       if (as){ss=-0.2;}
  for(int i=0;i<starrss.length;i++) { starrss[i].show(); }
-  boop.show();
-  for(int e=0;e<frick.length;e++){ 
+   for(int e=0;e<frick.length;e++){ 
     frick[e].move();
           frick[e].show();  } 
+  boop.show();
   if(movee){ boop.move();boop.accelerate(ff+ss);}
   if(turnup){boop.turn(1);}
   if(turnip){boop.turn(-1);}
@@ -52,21 +52,6 @@ public void keyPressed()
        boop.setDirectionY(0);
        movee=false;
     
-    }
-}
-public void keyReleased(){
-   if (key=='q'){as=false;}
-   if (key=='d'){turnup=false;}
-   if (key=='a'){turnip=false;}
-   if (key=='s'){stap=false;}
-}'){turnup=true;}
-   if (key=='a'){turnip=true;}
-   if (key=='s'){stap=true;
-   boop.setX((int)(Math.random()*500));
-    boop.setY((int)(Math.random()*500));
-      boop.setDirectionX(0);
-       boop.setDirectionY(0);
-       movee=false;
     }
 }
 public void keyReleased(){

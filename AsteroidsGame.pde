@@ -3,9 +3,11 @@ Stars[] starrss;
 Asteroid [] frick;
 boolean movee, turnup, turnip, stap, stop, as, compstop;
 float ss, ff, k;
+public void settings(){
+ size(500, 500);
+ }
 public void setup() 
 {   
- size(500, 500);
  starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
  frick = new Asteroid[20];

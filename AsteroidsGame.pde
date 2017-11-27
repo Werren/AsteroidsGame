@@ -21,7 +21,6 @@ public void draw()
       if (as){ss=-0.2;}
  for(int i=0;i<starrss.length;i++) { starrss[i].show(); }
    for(int e=0;e<frick.length;e++){ 
-    frick[e].move();
           frick[e].show();  } 
   boop.show();
   if(movee){ boop.move();boop.accelerate(ff+ss);}

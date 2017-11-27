@@ -25,10 +25,6 @@ public Asteroid(){
       myDirectionY = Math.random()*4;
       myPointDirection += Math.random()*361;
 }
-public void move(){
-turn(rotSpeed);
-super.move();
-  }
     public void setX(int x) {myCenterX = x;}
      public int getX(){return (int) myCenterX;}
         public void setY(int y) {myCenterY = y;}

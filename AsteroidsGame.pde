@@ -1,6 +1,6 @@
 Spaceship boop=new Spaceship();
 Stars[] starrss;
-Asteroid [] rocls;
+Asteroid [] rocks;
 boolean movee, turnup, turnip, stap, stop, as, compstop;
 float ss, ff, k;
 public void setup() 

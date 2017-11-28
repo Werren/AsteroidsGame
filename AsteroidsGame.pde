@@ -15,7 +15,9 @@ public void draw()
   background(0);
   ss=0;
   ff=0.1;
-   for(int e=0;e<rocks.length;e++){ rocks[e] = new Asteroid(); }
+ for(int e=0;e<rocks.length;e++){ 
+    rocks[e].move();
+    rocks[e].show();  } 
       if (as){ss=-0.2;}
  for(int i=0;i<starrss.length;i++) { starrss[i].show(); }
   boop.show();

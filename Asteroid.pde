@@ -1,6 +1,6 @@
-public class Asteroids extends Floater
+public class Asteroid extends Floater
 {
-public Asteroids() {
+public Asteroid() {
   corners = 6;
   xCorners= new int[corners];
   yCorners= new int[corners];

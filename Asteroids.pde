@@ -1,42 +1,62 @@
-public class Asteroid extends Floater
-{
-public Asteroid(){
-  corners = 6;
-  xCorners= new int[corners];
-  yCorners= new int[corners];
-  xCorners[0] =-11;
-    yCorners[0] =-8;
-    xCorners[1] =7;
-  yCorners[1] =-8;
-  xCorners[2] =13;
-  yCorners[2] =0;
-  xCorners[3] =6;
-  yCorners[3] =10;
-  xCorners[4] =-11;
-  yCorners[4] =8;
-  xCorners[5] =-5;
-  yCorners[5] =0;
-        myPointDirection =Math.random()*361;
-     myColor = color(180);
-      myCenterX =(int)(Math.random()*500);
-      myCenterY = (int)(Math.random()*500);
-       myDirectionX = Math.random()*4;
-      myDirectionY = Math.random()*4;
-      myPointDirection += Math.random()*361;
+Spaceship boop=new Spaceship();
+Stars[] starrss;
+Asteroid [] frick;
+boolean movee, turnup, turnip, stap, stop, as, compstop;
+float ss, ff, k;
+public void setup() 
+{   
+ size(500, 500);
+ starrss = new Stars[100];
+ for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
+ frick = new Asteroid[20];
+ for(int e=0;e<frick.length;e++){ frick[e] = new Asteroid(); }
 }
-public void move(){
-turn(rotSpeed);
-super.move();
+public void draw() 
+{
+  background(0);
+  ss=0;
+  ff=0.1;
+    boop.show();
+      if (as){ss=-0.2;}
+         for(int e=0;e<frick.length;e++){ 
+    frick[e].move();
+          frick[e].show();  } 
+ for(int i=0;i<starrss.length;i++) { starrss[i].show(); }
+  if(movee){ boop.move();boop.accelerate(ff+ss);}
+  if(turnup){boop.turn(1);}
+  if(turnip){boop.turn(-1);}
+  if(stop){ 
+    boop.setDirectionX(0);
+    boop.setDirectionY(0);}
+  if(stap){
+    fill(0);
+    noStroke();
+    rect(0,0,1000,1000);
+    for(int i=0;i<200;i++)
+  {
+    fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+    ellipse(250,250,(float)(Math.random()*700),(float)(Math.random()*700));
   }
-  private int rotSpeed=(int)(Math.random()*4);
-    public void setX(int x) {myCenterX = x;}
-     public int getX(){return (int) myCenterX;}
-        public void setY(int y) {myCenterY = y;}
-         public int getY(){return (int) myCenterY;}
-          public void setDirectionX(double x) {myDirectionX = x;}
-           public double getDirectionX(){return myDirectionX;}
-        public void setDirectionY(double y) {myDirectionY = y;}
-         public double getDirectionY(){return myDirectionY;}
-         public void setPointDirection(int degrees)  {myPointDirection = degrees;}
-public double getPointDirection(){return myPointDirection;}
+  }
+}
+public void keyPressed()
+{
+       if (key=='q'){as=true;}
+   if (key=='w') {  movee=true;}
+   if (key=='d'){turnup=true;}
+   if (key=='a'){turnip=true;}
+   if (key=='s'){stap=true;
+   boop.setX((int)(Math.random()*500));
+    boop.setY((int)(Math.random()*500));
+      boop.setDirectionX(0);
+       boop.setDirectionY(0);
+       movee=false;
+    
+    }
+}
+public void keyReleased(){
+   if (key=='q'){as=false;}
+   if (key=='d'){turnup=false;}
+   if (key=='a'){turnip=false;}
+   if (key=='s'){stap=false;}
 }

@@ -5,7 +5,7 @@ boolean movee, turnup, turnip, stap, stop, as, compstop;
 float ss, ff, k;
 public void setup() 
 {   
- size(500, 500);
+ size(1000, 1000);
  starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
  frick = new Asteroid[20];

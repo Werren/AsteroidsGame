@@ -1,20 +1,32 @@
 public class Asteroid extends Floater
 {
-private int rotSeed=(int)(Math.random()*4)+1;
+private int rotSpeed;
 public Asteroid(){
-   corners = 25;
-  int[] xS = {16-15/13,12-15/13,12-15/13,4-15/13,0-15/13,0-15/13,-6-15/13,-6-15/13,-2-15/13,-2-15/13,-1-15/13,-1-15/13,-6-15/13,6-15/13,12-15/13,12-15/13,4-15/13,0-15/13,0-15/13,-6-15/13,-6-15/13,-2-15/13,-2-15/13,-1-15/13,-1-15/13,-6-15/13};
-      int[] yS  = {-1,-1,-3,-5,-5,-7,-7,-5,-5,-3,-3,-1,-1,1,1,3,5,5,7,7,5,5,3,3,1,1};
-        myPointDirection =(int)(Math.random()*360)+1;
+  corners = 6;
+  xCorners= new int[corners];
+  yCorners= new int[corners];
+  xCorners[0] =-11;
+    yCorners[0] =-8;
+    xCorners[1] =7;
+  yCorners[1] =-8;
+  xCorners[2] =13;
+  yCorners[2] =0;
+  xCorners[3] =6;
+  yCorners[3] =10;
+  xCorners[4] =-11;
+  yCorners[4] =8;
+  xCorners[5] =-5;
+  yCorners[5] =0;
+        myPointDirection =Math.random()*361;
      myColor = color(251);
       myCenterX =(int)(Math.random()*500);
       myCenterY = (int)(Math.random()*500);
-       myDirectionX = (int)(Math.random()*4)+1;
-      myDirectionY = (int)(Math.random()*4)+1;
-      myPointDirection += (int)(Math.random()*361)+1;
+       myDirectionX = Math.random()*4;
+      myDirectionY = Math.random()*4;
+      myPointDirection += Math.random()*361;
 }
 public void move(){
-turn(rotSeed);
+turn(rotSpeed);
 super.move();
   }
     public void setX(int x) {myCenterX = x;}

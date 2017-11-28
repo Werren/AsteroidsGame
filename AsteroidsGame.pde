@@ -3,22 +3,25 @@ Stars[] starrss;
 Asteroid [] frick;
 boolean movee, turnup, turnip, stap, stop, as, compstop;
 float ss, ff, k;
-public void settings(){
- size(500, 500);
- }
 public void setup() 
 {   
+ size(500, 500);
  starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
+ frick = new Asteroid[20];
+ for(int e=0;e<frick.length;e++){ frick[e] = new Asteroid(); }
 }
 public void draw() 
 {
   background(0);
   ss=0;
   ff=0.1;
+    boop.show();
       if (as){ss=-0.2;}
+         for(int e=0;e<frick.length;e++){ 
+    frick[e].move();
+          frick[e].show();  } 
  for(int i=0;i<starrss.length;i++) { starrss[i].show(); }
-  boop.show();
   if(movee){ boop.move();boop.accelerate(ff+ss);}
   if(turnup){boop.turn(1);}
   if(turnip){boop.turn(-1);}

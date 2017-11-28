@@ -8,7 +8,6 @@ public void setup()
  size(500, 500);
  frick= new Asteroid [20];
  starrss = new Stars[100];
- for(int e=0;e<rocks.length;e++){ rocks[e] = new Asteroid(); }
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
 }
 public void draw() 

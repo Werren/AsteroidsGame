@@ -17,7 +17,7 @@ public Asteroid(){
   xCorners[5] =-5;
   yCorners[5] =0;
         myPointDirection =(int)(Math.random()*360)+1;
-     myColor = color(251);
+     myColor = color(180);
       myCenterX =(int)(Math.random()*500)+1;
       myCenterY = (int)(Math.random()*500)+1;
        myDirectionX = (int)(Math.random()*4)+1;

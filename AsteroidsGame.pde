@@ -8,7 +8,7 @@ public void setup()
  size(500, 500);
  starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
- for(int i=0;i<frick.length;i++){ frick[i] = new Asteroid(); }
+ for(int e=0;e<frick.length;e++){ frick[e] = new Asteroid(); }
 }
 public void draw() 
 {
@@ -17,9 +17,9 @@ public void draw()
   ff=0.1;
     boop.show();
       if (as){ss=-0.2;}
-         for(int i=0;i<frick.length;i++){ 
-    frick[i].move();
-          frick[i].show();  } 
+         for(int e=0;e<frick.length;e++){ 
+    frick[e].move();
+          frick[e].show();  } 
  for(int i=0;i<starrss.length;i++) { starrss[i].show(); }
   if(movee){ boop.move();boop.accelerate(ff+ss);}
   if(turnup){boop.turn(1);}

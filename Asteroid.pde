@@ -1,12 +1,11 @@
 public class Asteroid extends Floater
 {
-private int rotSpeed=(int)(Math.random()*4)+1;
+
 public Asteroid(){
 
 }
 public void move(){
-turn(rotSpeed);
-super.move();
+
   }
     public void setX(int x) {myCenterX = x;}
      public int getX(){return (int) myCenterX;}

@@ -1,6 +1,6 @@
 Spaceship boop=new Spaceship();
 Stars[] starrss;
-Asteroids [] rocks= new Asteroids [20];
+Asteroid [] rocks= new Asteroid [20];
 boolean movee, turnup, turnip, stap, stop, as, compstop;
 float ss, ff, k;
 public void setup() 
@@ -8,7 +8,7 @@ public void setup()
  size(500, 500);
  starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
-  for(int e=0;e<rocks.length;e++){ rocks[e] = new Asteroids(); }
+  for(int e=0;e<rocks.length;e++){ rocks[e] = new Asteroid(); }
 }
 public void draw() 
 {

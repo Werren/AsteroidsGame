@@ -1,12 +1,12 @@
 Spaceship boop=new Spaceship();
 Stars[] starrss;
-Asteroid [] frick= new Asteroid [20];
+Asteroid [] frick;
 boolean movee, turnup, turnip, stap, stop, as, compstop;
 float ss, ff, k;
 public void setup() 
 {   
  size(500, 500);
-   for(int i=0;i<frick.length;i++){ frick[i] = new Asteroid(); }
+ frick= new Asteroid [20];
  starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
 }

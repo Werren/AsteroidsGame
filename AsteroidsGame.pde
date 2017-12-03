@@ -1,29 +1,51 @@
 Spaceship boop=new Spaceship();
 Stars[] starrss;
-Asteroid [] rocks= new Asteroid [20];
-boolean movee, turnup, turnip, stap, stop, as, compstop;
+ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
+boolean movee, turnup, turnip, stap, stop, as, compstop, hello;
 float ss, ff, k;
 public void setup() 
 {   
  size(500, 500);
  starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
-  for(int e=0;e<rocks.length;e++){ rocks[e] = new Asteroid(); }
+  for(int e=0;e<20;e++){  rocks.add(new Asteroid()); }
 }
 public void draw() 
 {
   background(0);
-  ss=0;
-  ff=0.1;
-      if (as){ss=-0.2;}
+  
+  //acceleration speed
+  ff=0.05;
+  
+ //brake
+/*if (as){
+ if(boop.getDirectionX()>=0){boop.setDirectionX(boop.getDirectionX()-0.05);}
+ if(boop.getDirectionY()>=0){boop.setDirectionY(boop.getDirectionY()-0.05);}
+ if(boop.getDirectionX()<=0){boop.setDirectionX(boop.getDirectionX()+0.05);}
+ if(boop.getDirectionY()<=0){boop.setDirectionY(boop.getDirectionY()+0.05);}
+        }*/
+        
+   //acceleration limit
+if(boop.getDirectionX()>6){boop.setDirectionX(6);}
+if(boop.getDirectionY()>6){boop.setDirectionY(6);}
+if(boop.getDirectionX()<-6){boop.setDirectionX(-6);}
+if(boop.getDirectionY()<-6){boop.setDirectionY(-6);}
+          
+for(int i=0;i<rocks.size();i++) { 
+ float aa =dist(boop.getX(), boop.getY(),rocks.get(i).getX(), rocks.get(i).getY());
+//System.out.println(boop.getDirectionY()+" , "+boop.getDirectionX());
+   if (aa<20){
+          rocks.remove(i);} 
+else {
+rocks.get(i).move();
+        rocks.get(i).show();}
+  }
  for(int i=0;i<starrss.length;i++) { starrss[i].show(); }
-   for(int e=0;e<rocks.length;e++){ 
-    rocks[e].move();
-    rocks[e].show();  } 
   boop.show();
-  if(movee){ boop.move();boop.accelerate(ff+ss);}
-  if(turnup){boop.turn(1);}
-  if(turnip){boop.turn(-1);}
+if(movee){ boop.move();boop.accelerate(ff+ss);}
+    if(movee==false){ boop.move();}
+  if(turnup){boop.turn(2);}
+  if(turnip){boop.turn(-2);}
   if(stop){ 
     boop.setDirectionX(0);
     boop.setDirectionY(0);}
@@ -38,24 +60,28 @@ public void draw()
   }
   }
 }
-public void keyPressed()
+
+//activating keys
+ public void keyPressed()
 {
-       if (key=='q'){as=true;}
-   if (key=='w') {  movee=true;}
+   if (key=='s'){as=true;}
+   if (key=='w') {movee=true;}
    if (key=='d'){turnup=true;}
    if (key=='a'){turnip=true;}
-   if (key=='s'){stap=true;
+   if (keyCode==32){stap=true;
    boop.setX((int)(Math.random()*500));
     boop.setY((int)(Math.random()*500));
       boop.setDirectionX(0);
        boop.setDirectionY(0);
+        boop.setPointDirection((int)(Math.random()*360));
        movee=false;
     
     }
 }
 public void keyReleased(){
-   if (key=='q'){as=false;}
+   if (key=='s'){as=false;}
    if (key=='d'){turnup=false;}
    if (key=='a'){turnip=false;}
-   if (key=='s'){stap=false;}
+   if (keyCode==32){stap=false;}
+   if (key=='w'){movee=false;}
 }

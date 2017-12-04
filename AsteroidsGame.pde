@@ -33,7 +33,6 @@ if(boop.getDirectionY()<-6){boop.setDirectionY(-6);}
           
 for(int i=0;i<rocks.size();i++) { 
  float aa =dist(boop.getX(), boop.getY(),rocks.get(i).getX(), rocks.get(i).getY());
-//System.out.println(boop.getDirectionY()+" , "+boop.getDirectionX());
    if (aa<20){
           rocks.remove(i);} 
 else {

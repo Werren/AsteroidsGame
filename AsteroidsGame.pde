@@ -1,22 +1,34 @@
 Spaceship boop=new Spaceship();
 Stars[] starrss;
 ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
+ArrayList <Bullet> bill = new ArrayList <Bullet>();
 boolean movee, turnup, turnip, stap, stop, as, compstop, hello;
 float ss, ff, k;
+int a=0;
 public void setup() 
 {   
  size(500, 500);
  starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
   for(int e=0;e<20;e++){  rocks.add(new Asteroid()); }
+   
 }
 public void draw() 
 {
   background(0);
-  
+ for(int e=0;e<23;e++){  bill.add(new Bullet(boop)); }
+ 
+  for(int i=0;i<bill.size();i++) {
+    if (as){
+//System.out.println(bill.get(i).myDirectionX+" , "+bill.get(i).myDirectionY+" , "+bill.get(i).myPointDirection);
+bill.get(i).show();
+bill.get(i).move();
+    }
+    }
+
   //acceleration speed
   ff=0.05;
-  
+
  //brake
 /*if (as){
  if(boop.getDirectionX()>=0){boop.setDirectionX(boop.getDirectionX()-0.05);}
@@ -30,17 +42,23 @@ if(boop.getDirectionX()>6){boop.setDirectionX(6);}
 if(boop.getDirectionY()>6){boop.setDirectionY(6);}
 if(boop.getDirectionX()<-6){boop.setDirectionX(-6);}
 if(boop.getDirectionY()<-6){boop.setDirectionY(-6);}
-          
+
+          //asteroid detection
 for(int i=0;i<rocks.size();i++) { 
  float aa =dist(boop.getX(), boop.getY(),rocks.get(i).getX(), rocks.get(i).getY());
+//System.out.println(boop.getDirectionY()+" , "+boop.getDirectionX());
    if (aa<20){
           rocks.remove(i);} 
 else {
 rocks.get(i).move();
         rocks.get(i).show();}
   }
+  
+  //star show
  for(int i=0;i<starrss.length;i++) { starrss[i].show(); }
-  boop.show();
+  
+  //spaceship keys setup
+   boop.show();
 if(movee){ boop.move();boop.accelerate(ff+ss);}
     if(movee==false){ boop.move();}
   if(turnup){boop.turn(2);}

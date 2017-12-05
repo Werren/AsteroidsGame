@@ -26,7 +26,7 @@ public Asteroid() {
    
 }
 public void move(){
-
+  turn(rotSpeed);
 super.move();
   }
     public int getNum(){return myNum;}

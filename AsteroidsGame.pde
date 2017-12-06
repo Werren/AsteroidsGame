@@ -18,16 +18,18 @@ public void setup()
 public void draw() 
 {
   background(0);
- for(int e=0;e<2;e++){  bill.add(new Bullet(boop)); }
- 
+    if (as) for(int e=0;e<1;e++){  bill.add(new Bullet(boop)); }
+ for (int f=0;f<bill.size();f++){
+  // float bb=dist(bill.get(i).myCenterX,bill.get(i).myCenterY,rocks.get(i).getX(),rocks.get(i).getY());
   for(int i=0;i<bill.size();i++) {
-    if (as){
-//System.out.println(bill.get(i).myDirectionX+" , "+bill.get(i).myDirectionY+" , "+bill.get(i).myPointDirection);
+//System.out.println(bill.get(i).myCenterX);
+
 bill.get(i).show();
 bill.get(i).move();
+   
     }
-    }
-
+   // if(bill.g
+ }
   //acceleration speed
   ff=0.05;
 

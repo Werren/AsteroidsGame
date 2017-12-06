@@ -21,8 +21,8 @@ public Asteroid() {
      myColor = color(123);
       setX((int)(Math.random()*500)+1);
          setY((int)(Math.random()*500)+1);     
-         setDirectionX ( (int)(Math.random()*4)+1);
-         setDirectionY ( (int)(Math.random()*4)+1);
+         setDirectionX ( (int)(Math.random()*4)-2);
+         setDirectionY ( (int)(Math.random()*4)-2);
    
 }
 public void move(){

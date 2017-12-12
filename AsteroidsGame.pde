@@ -5,9 +5,10 @@ ArrayList <Bullet> bill = new ArrayList <Bullet>();
 boolean movee, turnup, turnip, stap, stop, as, compstop, hello;
 float ss, ff, k;
 int a=0;
+
 public void setup() 
 {   
-   size(500, 500);
+       size(500, 500);
  starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
   for(int e=0;e<20;e++){  rocks.add(new Asteroid()); }
@@ -17,14 +18,9 @@ public void draw()
 {
   background(0);
   if (as)  bill.add(new Bullet(boop));
-
 //}
-     
-      
-   
 //    System.out.println(bill.get(i).myCenterX+" , "+bill.get(i).myCenterY);
-   // }
- 
+   // 
 //System.out.println(bb);
 //if(bb>5){
     for(int i=0;i<bill.size();i++){
@@ -125,8 +121,18 @@ if(movee){ boop.move();boop.accelerate(ff+ss);}
        boop.setDirectionY(0);
         boop.setPointDirection((int)(Math.random()*360));
        movee=false;
+         for(int d=0;d<rocks.size();d++){ 
+                     rocks.remove(d);
+         }
+       for(int e=0;e<20;e++){ 
+     rocks.add(new Asteroid());
+  }
+   }
+      for(int i=0;i<rocks.size();i++) { 
+      rocks.get(i).move();
+        rocks.get(i).show();}
     
-    }
+ 
 }
 public void keyReleased(){
    if (key=='s'){as=false;}

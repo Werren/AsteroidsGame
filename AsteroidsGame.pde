@@ -5,10 +5,11 @@ ArrayList <Bullet> bill = new ArrayList <Bullet>();
 boolean movee, turnup, turnip, stap, stop, as, compstop, hello;
 float ss, ff, k;
 int a=0;
-
+public void settings(){
+   size(500, 500);
+}
 public void setup() 
 {   
-   size(500, 500);
  starrss = new Stars[100];
  for(int i=0;i<starrss.length;i++){ starrss[i] = new Stars(); }
   for(int e=0;e<20;e++){  rocks.add(new Asteroid()); }
@@ -17,21 +18,51 @@ public void setup()
 public void draw() 
 {
   background(0);
-    if (as) for(int e=0;e<1;e++){  bill.add(new Bullet(boop)); }
- for (int f=0;f<bill.size();f++){
-  // float bb=dist(bill.get(i).myCenterX,bill.get(i).myCenterY,rocks.get(i).getX(),rocks.get(i).getY());
-  for(int i=0;i<bill.size();i++) {
-//System.out.println(bill.get(i).myCenterX);
+  if (as)  bill.add(new Bullet(boop));
 
-bill.get(i).show();
-bill.get(i).move();
+//}
+     
+      
    
+//    System.out.println(bill.get(i).myCenterX+" , "+bill.get(i).myCenterY);
+   // }
+ 
+//System.out.println(bb);
+//if(bb>5){
+    for(int i=0;i<bill.size();i++){
+       bill.get(i).move();
+bill.get(i).show();
+ bill.get(i).myCenterX +=  bill.get(i).myDirectionX;    
+bill.get(i).myCenterY += bill.get(i).myDirectionY;  
+if( bill.get(i).myCenterX==bill.get(i).myDirectionX&&bill.get(i).myCenterY==bill.get(i).myDirectionY){
+  bill.remove(i);
+}
+//System.out.println(frameRate);
+  for(int b=0;b<rocks.size();b++){  
+//float bb=  dist(bill.get(i).getX(),bill.get(i).getY(),rocks.get(b).getX(),rocks.get(b).getY());
+if(bill.get(i).getX()==rocks.get(b).getX()+1){
+if( bill.get(i).getY()==rocks.get(b).getY()+1){
+ // if(bill.get(i).getX()<=rocks.get(b).getX()){
+//if( bill.get(i).getY()<=rocks.get(b).getY()){
+bill.remove(i);
+rocks.remove(b);
+break;
+//}
+}
+}
     }
-   // if(bill.g
- }
+}
+ //   }
+ // }
+  
+//else{
+//bill.remove(i);
+////break;
+ // }
+  
   //acceleration speed
   ff=0.05;
-
+ 
  //brake
 /*if (as){
  if(boop.getDirectionX()>=0){boop.setDirectionX(boop.getDirectionX()-0.05);}

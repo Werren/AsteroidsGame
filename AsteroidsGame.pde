@@ -37,11 +37,12 @@ bill.get(i).myCenterY += bill.get(i).myDirectionY;
 if( bill.get(i).myCenterX==bill.get(i).myDirectionX&&bill.get(i).myCenterY==bill.get(i).myDirectionY){
   bill.remove(i);
 }
-//System.out.println(frameRate);
+System.out.println(frameRate);
   for(int b=0;b<rocks.size();b++){  
 //float bb=  dist(bill.get(i).getX(),bill.get(i).getY(),rocks.get(b).getX(),rocks.get(b).getY());
-if(bill.get(i).getX()==rocks.get(b).getX()+1){
-if( bill.get(i).getY()==rocks.get(b).getY()+1){
+//if(bill.get(i).getX()==rocks.get(b).getX()+1){
+//if( bill.get(i).getY()==rocks.get(b).getY()+1){
+   if (dist(rocks.get(b).getX(), rocks.get(b).getY(), bill.get(i).getX(),bill.get(i).getY())<20){
  // if(bill.get(i).getX()<=rocks.get(b).getX()){
 //if( bill.get(i).getY()<=rocks.get(b).getY()){
 bill.remove(i);
@@ -51,7 +52,7 @@ break;
 }
 }
     }
-}
+
  //   }
  // }
   
